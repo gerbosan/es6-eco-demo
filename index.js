@@ -56,7 +56,6 @@ const productCartComponent = (product) =>
     `
         <li class="product-cart card">
             <button data-id="${product.id}" class="removeBtn">X</button>
-            <img src="https://placeimg.com/150/150/tech" alt="">
             
             <div class="product-details">
                 <span class="product-name">${product.name}</span>

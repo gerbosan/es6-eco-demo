@@ -9,6 +9,8 @@ input {
     padding: 5px;
     font-size: 12px;
     border: 1px solid lightgray;
+    width: 100%;
+    max-width: 200px;
 }
 
 button {
@@ -17,12 +19,14 @@ button {
     color: white;
     padding: 5px 15px;
     cursor: pointer;
+    width: 100%;
+    max-width: 200px;
 }
 
 .root {
     max-width: 960px;
     margin: auto;
-    padding: 0;
+    padding: 0 40px;
 }
 
 nav {
@@ -48,6 +52,7 @@ nav {
     flex-direction: row;
     margin-top: 50px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product {
@@ -57,6 +62,12 @@ nav {
     position: relative;
     margin-right: 20px;
     margin-bottom: 20px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.product button {
+    max-width: 100%;
 }
 
 .product-cart {
@@ -72,18 +83,23 @@ nav {
     height: 81px;
 }
 
+.product-cart button.removeBtn {
+    max-width: 50px;
+}
+
 .cartItemCount {
     margin-right: 10px;
     font-size: 12px;
     font-weight: bold;
 }
 
-.borrarBtn {
+button.borrarBtn {
     position: absolute;
     top: 0;
     right: 0;
     background-color: #d45c5c;
     border: none;
+    max-width: 50px;
 }
 
 .product-details {
@@ -104,9 +120,10 @@ nav {
 .carritoPopup {
     position: fixed;
     top: 100px;
-    right: -100%;
+    right: -200%;
     background-color: white;
-    width: 320px;
+    max-width: 320px;
+    width: 80%;
     height: 70%;
     padding: 30px;
     border: 1px solid lightgray;
@@ -115,7 +132,7 @@ nav {
 }
 
 .carritoPopup.active {
-    right: 50px;
+    right: 40px;
 }
 
 .card {
