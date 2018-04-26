@@ -52,10 +52,10 @@ const productComponent = (product) =>
          </li>
     `;
 
-const productCartComponent = (product) =>
+const productCartComponent = (product, index) =>
     `
         <li class="product-cart card">
-            <button data-id="${product.id}" class="removeBtn">X</button>
+            <button data-id="${index}" class="removeBtn">X</button>
             
             <div class="product-details">
                 <span class="product-name">${product.name}</span>
@@ -140,9 +140,7 @@ function deleteProductHandler (e) {
 function deleteProductCartHandler (e) {
     const productId = e.currentTarget.dataset.id;
 
-    APP_STATE.carrito.items = APP_STATE.carrito.items.filter(product => {
-        return product.id != productId;
-    });
+    APP_STATE.carrito.items.splice(productId, 1);
 
     render();
 }
