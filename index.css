@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+input {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid lightgray;
+}
+
+button {
+    border: 1px solid #758fa8;
+    background-color: #88a6bf;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.root {
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 0 0 0;
+}
+
+nav {
+    padding-top: 40px;
+    max-width: 960px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin {
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+.admin h5 {
+    margin-top: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.product {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.product-cart {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.product-cart img {
+    height: 81px;
+}
+
+.borrarBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #d45c5c;
+    border: none;
+}
+
+.product-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product img {
+    width: 100%;
+}
+
+.carritoPopup {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    background-color: white;
+    width: 300px;
+    height: 70%;
+    padding: 30px;
+    border: 1px solid lightgray;
+    transition: all 0.7s cubic-bezier(.25,.8,.25,1) !important;
+    overflow-y: scroll;
+}
+
+.carritoPopup.active {
+    right: 50px;
+}
+
+.card {
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.totals {
+    margin-top: 10px;
+}
