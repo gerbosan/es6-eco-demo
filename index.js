@@ -121,7 +121,7 @@ const appComponent = () =>
 
         ${productListComponent(APP_STATE.products)}
                 
-        ${cartComponent()};
+        ${cartComponent()}
     `;
 
 /// EVENT HANDLERS
