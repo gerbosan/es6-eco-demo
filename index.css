@@ -22,15 +22,16 @@ button {
 .root {
     max-width: 960px;
     margin: auto;
-    padding: 40px 0 0 0;
+    padding: 0;
 }
 
 nav {
-    padding-top: 40px;
+    padding: 40px 0;
     max-width: 960px;
     margin: auto;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .admin {
@@ -71,6 +72,12 @@ nav {
     height: 81px;
 }
 
+.cartItemCount {
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .borrarBtn {
     position: absolute;
     top: 0;
@@ -99,7 +106,7 @@ nav {
     top: 100px;
     right: -100%;
     background-color: white;
-    width: 300px;
+    width: 320px;
     height: 70%;
     padding: 30px;
     border: 1px solid lightgray;

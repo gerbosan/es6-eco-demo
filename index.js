@@ -22,7 +22,20 @@ const APP_STATE = {
     }
 };
 
+let newItem = {
+    name: '',
+    price: 0
+};
+
 /// COMPONENTS
+
+const topNav = () =>
+    `
+        <nav>
+            <span class="cartItemCount">Products en Carrito: ${APP_STATE.carrito.items.length}</span>
+            <button class="carritoBtn">Carrito</button>
+        </nav>
+    `;
 
 const productComponent = (product) =>
     `
@@ -74,16 +87,25 @@ const cartComponent = () =>
         </div>  
     `;
 
-const appComponent = () =>
+const adminComponent = () =>
     `
         <div class="admin">
             <h4>Admin</h4>
             <hr>
             <h5>Create Product</h5>
-            <input placeholder="Product Name" type="text" id="productNameInput"/>
+            <input placeholder="Product Name" type="text" id="productNameInput" value="${newItem.name}"/>
             <input placeholder="Product Price" type="number" id="productPriceInput"/>
-            <button id="addUser">Add User</button>
+            <button id="addProduct">Add Product</button>
+            
+            <h5>${newItem.name ? 'Creando Nuevo ' + newItem.name : ''}</h5>
         </div>
+    `;
+
+const appComponent = () =>
+    `
+        ${topNav()}
+
+        ${adminComponent()}
 
         ${productListComponent(APP_STATE.products)}
                 
@@ -150,7 +172,7 @@ function carritoHandler () {
 /// EVENT LISTENERS
 
 function addProductListener () {
-    document.getElementById('addUser').addEventListener('click', addProductHandler);
+    document.getElementById('addProduct').addEventListener('click', addProductHandler);
 }
 
 function deleteProductListener () {
@@ -192,11 +214,11 @@ function render(state) {
     deleteProductListener();
     buyProductListener();
     deleteProductCartListener();
+    carritoListener();
 }
 
 (function() {
     render();
-    carritoListener();
 })();
 
 
