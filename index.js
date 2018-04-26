@@ -27,6 +27,19 @@ let newItem = {
     price: 0
 };
 
+const xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        let response = JSON.parse(this.responseText);
+
+        APP_STATE.star = response;
+
+        render();
+    }
+};
+xhttp.open("GET", "https://swapi.co/api/people/1", true);
+xhttp.send();
+
 /// COMPONENTS
 
 const topNav = () =>
@@ -215,7 +228,7 @@ function render(state) {
 }
 
 (function() {
-    render();
+    // render();
 })();
 
 
